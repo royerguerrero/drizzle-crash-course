@@ -141,3 +141,26 @@ export const PostCategoryTableRelations = relations(
   }
 );
 ```
+
+- Update record
+
+```ts
+const userUpdated = await db
+  .update(UserTable)
+  .set({
+    name: "Mr. X",
+  })
+  .where(eq(UserTable.id, "22731ac2-2901-430a-80e5-2274427f95d2"))
+  .returning({ userName: UserTable.name });
+
+console.log(userUpdated);
+```
+
+- Delete record
+
+```ts
+const users = await db
+  .delete(UserTable)
+  .where(isNull(UserTable.subscription_due_date))
+  .returning({ updatedUserId: UserTable.id });
+```
