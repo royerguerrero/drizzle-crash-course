@@ -1,0 +1,29 @@
+{
+  "name": "drizzle-crash-course",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.30.10",
+    "esbuild": "^0.20.2",
+    "fsevents": "^2.3.3",
+    "get-tsconfig": "^4.7.5",
+    "postgres": "^3.4.4",
+    "resolve-pkg-maps": "^1.0.0",
+    "undici-types": "^5.26.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "drizzle-kit": "^0.21.2",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/drizzle/migrate.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
